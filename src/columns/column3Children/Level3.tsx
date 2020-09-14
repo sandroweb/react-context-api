@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import { Coluna3Context } from '../Column3';
+import { Color } from '../../App';
 
 export default () => {
     const colors = [
-        'lightyellow',
-        'purple',
-        'red',
-        'green',
-        'cyan',
+        Color.LightYellow,
+        Color.Purple,
+        Color.Red,
+        Color.Green,
+        Color.Cyan,
     ];
     const { bg, setBg } = useContext(Coluna3Context);
     
@@ -18,7 +19,7 @@ export default () => {
                 Recebeu BG: { bg || '--' }
             </p>
             {
-                colors.map((color: string, key: number) => {
+                colors.map((color: Color, key: number) => {
                     return (
                         <button onClick={ () => setBg(color) } style={{ backgroundColor: color }}>
                             { color === (bg || '--') ? '✓' : '' }{ color }

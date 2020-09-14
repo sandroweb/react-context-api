@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Color } from '../../App';
 
 interface Props {
-    bg: string,
+    bg: Color,
     setBg: Function
 }
 
@@ -10,13 +11,13 @@ export default ({
     setBg
 }: Props) => {
     const colors = [
-        'lightyellow',
-        'purple',
-        'red',
-        'green',
-        'cyan',
+        Color.LightYellow,
+        Color.Purple,
+        Color.Red,
+        Color.Green,
+        Color.Cyan,
     ];
-    const [ newColor, setNewColor ] = useState<string>();
+    const [ newColor, setNewColor ] = useState<Color>(bg);
 
     useEffect(() => {
         setTimeout(() => {
@@ -31,7 +32,7 @@ export default ({
                 Recebeu BG: { newColor || '--' }
             </p>
             {
-                colors.map((color: string, key: number) => {
+                colors.map((color: Color, key: number) => {
                     return (
                         <button onClick={ () => setBg(color) } style={{ backgroundColor: color }}>
                             { color === (newColor || '--') ? '✓' : '' }{ color }

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Level2 from './Level2';
+import { Color } from '../../App';
 
 interface Props {
-    bg: string,
+    bg: Color,
     setBg: Function
 }
 
@@ -10,7 +11,7 @@ export default ({
     bg,
     setBg
 }: Props) => {
-    const [ newColor, setNewColor ] = useState<string>();
+    const [ newColor, setNewColor ] = useState<Color>(bg);
 
     useEffect(() => {
         setTimeout(() => {
@@ -22,9 +23,9 @@ export default ({
         <div className="ColumnChild">
             <h6>Level 1</h6>
             <p>
-                Recebeu BG: { newColor || '--' }
+                Recebeu BG: { newColor }
             </p>
-            <Level2 bg={ newColor || '--' } setBg={ setBg } />
+            <Level2 bg={ newColor } setBg={ setBg } />
         </div>
     )
 }
