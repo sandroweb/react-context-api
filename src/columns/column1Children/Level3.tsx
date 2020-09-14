@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Color } from '../../App';
+import { Color, getColorByBgColor } from '../../App';
 
 interface Props {
     bg: Color,
@@ -34,7 +34,7 @@ export default ({
             {
                 colors.map((color: Color, key: number) => {
                     return (
-                        <button onClick={ () => setBg(color) } style={{ backgroundColor: color }}>
+                        <button onClick={ () => setBg(color) } style={{ backgroundColor: color, color: getColorByBgColor(color) }}>
                             { color === (newColor || '--') ? '✓' : '' }{ color }
                         </button>
                     )

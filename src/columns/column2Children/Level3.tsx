@@ -1,6 +1,6 @@
 import React from 'react';
 import { Coluna2Context } from '../Column2';
-import { Color } from '../../App';
+import { Color, getColorByBgColor } from '../../App';
 
 export default () => {
     const colors = [
@@ -23,7 +23,7 @@ export default () => {
                         {
                             colors.map((color: Color, key: number) => {
                                 return (
-                                    <button onClick={ () => setBg(color) } style={{ backgroundColor: color }}>
+                                    <button onClick={ () => setBg(color) } style={{ backgroundColor: color, color: getColorByBgColor(color) }}>
                                         { color === (bg || '--') ? '✓' : '' }{ color }
                                     </button>
                                 )
