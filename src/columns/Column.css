@@ -1,0 +1,33 @@
+.Column {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.Column > h1 {
+    margin: 0;
+    color: grey;
+}
+
+.Column > h4 {
+    padding: 5px 0 0 0;
+    margin: 0;
+    color: grey;
+}
+
+.ColumnChild {
+    margin-top: 10px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.ColumnChild h6 {
+    padding: 0;
+    margin: 0;
+}
+
+.ColumnChild button {
+    border-width: 0;
+    color: #000;
+    background: transparent;
+}

@@ -1,0 +1,8 @@
+.App {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: stretch;
+}
